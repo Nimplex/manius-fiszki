@@ -1,4 +1,4 @@
-FROM node:18-alpine
+FROM node:22-alpine
 
 WORKDIR /app
 
@@ -7,4 +7,7 @@ RUN npm install
 
 COPY . .
 
-CMD ["npm", "start"]
+RUN npm run build
+RUN npx prisma generate
+
+CMD ["npm", "run", "start"]
