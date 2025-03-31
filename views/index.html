@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maniuś</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="public/style.css">
+    <link rel="stylesheet" href="public/loading.css">
+</head>
+<body>
+    <div id="container">
+        <div id="loading">
+            <span class="loader"></span>
+        </div>
+    
+        <div id="admin-panel" class="section" style="display: none;">
+            <div class="button-row-between">
+                <a href="/">← wróć do listy</a>
+                <button onclick="toggleTableLightMode()" class="btn-gray" id="light-mode-button">☀️</button>
+            </div>
+            <span class="divider"></span>
+            <div class="button-row">
+                <button onclick="toggleAdminMode()" id="admin-mode-button">Włącz tryb admina</button>
+            </div>
+            <span class="divider"></span>
+            <div>
+                <div class="column">
+                    <label for="admin-code">Hasło:</label>
+                    <input type="password" name="code" placeholder="kod dostępu" id="admin-code">
+                </div>
+            </div>
+            <span class="divider"></span>
+            <form id="admin-lesson-form">
+                <div class="column">
+                    <label for="admin-title">Tytuł lekcji:</label>
+                    <input type="text" id="admin-title" name="title" required />
+                </div>
+                <div class="column">
+                    <label for="admin-words-table">Słówka:</label>
+                    <table id="admin-words-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 46px;"></th>
+                                <th>Word</th>
+                                <th>Translation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="button-row">
+                    <button type="button" class="btn-gray" onclick="addRow()">Add Word</button>
+                    <button type="submit" class="btn-green">Submit Lesson</button>
+                </div>
+            </form>
+        </div>
+    
+        <div id="lesson-game" style="display: none;">
+            <div class="container">
+                <div class="top-bar">
+                    <p>Sprawdź swoje umiejętności!</p>
+                    <button class="exit-button btn-gray" onclick="endGame()">✖</button>
+                </div>
+                <span class="divider"></span>
+                <h1 id="game-word"></h1>
+                <span class="divider" id="game-last-divider"></span>
+                <div id="bottom-bar-before">
+                    <button id="show-answer" onclick="showAnswer()">Pokaż odpowiedź</button>
+                </div>
+                <div id="bottom-bar-after" style="display: none;">
+                    <button id="known" onclick="knowAnswer()">Znam</button>
+                    <button id="not-known" onclick="dontKnowAnswer()">Nie znam</button>
+                </div>
+            </div>
+        </div>
+    
+        <div id="lessons-display" class="section" style="display: none">
+            <h1>Dostępne lekcje</h1>
+            <ul id="lessons-list"></ul>
+        </div>
+    
+        <div id="lesson-display" class="section" style="display: none">
+            <div class="button-row-between">
+                <a href="/">← wróć do listy</a>
+                <button onclick="toggleTableLightMode()" class="btn-gray" id="light-mode-button">☀️</button>
+            </div>
+            <span class="divider"></span>
+            <div>
+                <h1 id="lesson-id"></h1>
+                <div class="button-row">
+                    <button onclick="startGame()">Rozpocznij lekcję</button>
+                    <div class="admin-buttons" style="display: none; gap: 8px;">
+                        <button class="btn-blue">Edytuj lekcję</button>
+                        <button class="btn-red" onclick="deleteLesson()">Usuń lekcję</button>
+                    </div>
+                </div>
+            </div>
+            <span class="divider"></span>
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Word</th>
+                            <th>Translation</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lesson-fiszki"></tbody>
+                </table>
+            </div>
+        </div>
+    
+        <div id="error" class="section" style="display: none">
+            <h1 id="error-code"></h1>
+            <p id="error-message"></p>
+            <a href="/">Back to home page</a>
+        </div>
+    </div>
+    <script src="public/app.js"></script>
+</body>
+</html>

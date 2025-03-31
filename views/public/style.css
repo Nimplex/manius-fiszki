@@ -1,0 +1,402 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+:root {
+    --main-color: #9e6dff;
+    --white-color: #f1f1f1;
+    --radius: 10px;
+}
+
+body {
+    color: var(--white-color);
+    background: #0a0a0a;
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.section {
+    max-width: 1000px !important;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.section > div,
+.section > form {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 16px 0;
+    gap: 16px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 700;
+}
+
+a {
+    color: var(--main-color);
+    transition: opacity 0.2s;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+button {
+    padding: 10px 16px;
+    border-radius: var(--radius);
+    font-size: 16px;
+    font-weight: 400;
+    outline: none;
+    cursor: pointer;
+    color: var(--white-color);
+    background: none;
+    border: 1px solid var(--main-color);
+    transition: all 0.2s;
+}
+
+button:hover,
+button:focus {
+    color: black;
+    background: var(--main-color);
+}
+
+input {
+    box-sizing: border-box;
+    padding: 12px 16px;
+    border-radius: var(--radius);
+    font-size: 16px;
+    font-weight: 400;
+    outline: none;
+    color: var(--white-color);
+    background: none;
+    border: 1px solid #363636;
+    transition: all 0.2s;
+}
+
+input:focus {
+    border: 1px solid var(--main-color);
+}
+
+.input-orange {
+    border: 1px solid #ffb133 !important;
+}
+
+.input-green {
+    border: 1px solid #1fb06c !important;
+}
+
+.input-red {
+    border: 1px solid #dc3545 !important;
+}
+
+.btn-green {
+    color: var(--white-color);
+    border: 1px solid #1fb06c !important;
+}
+
+.btn-green:hover,
+.btn-green:focus {
+    color: var(--white-color);
+    background: #1fb06c;
+}
+
+.btn-gray {
+    color: var(--white-color);
+    border: 1px solid #363636 !important;
+}
+
+.btn-gray:hover,
+.btn-gray:focus {
+    color: var(--white-color);
+    background: #363636;
+}
+
+.btn-blue {
+    color: var(--white-color);
+    border: 1px solid #2ab1f4 !important;
+}
+
+.btn-blue:hover,
+.btn-blue:focus {
+    color: var(--white-color);
+    background: #2ab1f4;
+}
+
+.btn-red {
+    color: #dc3545;
+    border: 1px solid #dc3545 !important;
+}
+
+.btn-red:hover,
+.btn-red:focus {
+    color: var(--white-color);
+    background: #dc3545;
+}
+
+table {
+    min-width: 300px;
+    max-width: 100%;
+}
+
+table, th, td {
+    padding: 8px;
+    border: 1px solid #363636;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+thead tr {
+    background: #7c7c7c;
+}
+
+thead tr td,
+thead tr th {
+    font-size: 20px;
+    font-weight: 600 !important;
+}
+
+.light-mode table,
+.light-mode th,
+.light-mode td {
+    background: var(--white-color);
+    color: black;
+}
+
+.divider {
+    width: 100%;
+    border-top: 1px solid #363636;
+}
+
+.admin-mode .admin-buttons {
+    display: flex !important;
+}
+
+.admin-buttons {
+    gap: 8px;
+}
+
+.button-row {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+#admin-panel {
+    padding: 16px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+    border-collapse: collapse;
+}
+
+#lesson-game {
+    z-index: 9999;
+    padding: 16px;
+    box-sizing: border-box;
+    background: #0a0a0aee;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#lesson-game .top-bar {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#lesson-game .top-bar p {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.exit-button, #known, #not-known, #show-answer {
+    border: none !important;
+}
+
+.exit-button {
+    color: var(--white-color);
+    background: #363636;
+    border-radius: var(--radius);
+    padding: 4px 8px;
+}
+
+#lesson-game .top-bar button:hover {
+    background: #2a2a2a;
+}
+
+#lesson-game .container {
+    padding: 16px;
+    border-radius: var(--radius);
+    min-width: 300px;
+    border: 1px solid #363636;
+    background: #0f0f0f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+#lesson-game h1 {
+    padding: 8px 0;
+    font-size: 64px;
+    font-weight: 500;
+}
+
+#bottom-bar-after, #bottom-bar-before {
+    width: 100%;
+    display: flex;
+    gap: 8px;
+    justify-content: stretch;
+}
+
+#show-answer {
+    background: #1f80b0;
+    font-weight: 500;
+    color: var(--white-color);
+    width: 100%;
+}
+
+#known {
+    background: #1fb06c;
+    font-weight: 500;
+    color: var(--white-color);
+    width: 100%;
+}
+
+#known:hover {
+    background: hsl(152, 70%, 25%)
+}
+
+#not-known {
+    background: #dc3545;
+    font-weight: 500;
+    color: var(--white-color);
+    width: 100%;
+}
+
+#not-known:hover {
+    background: hsl(354, 70%, 39%);
+}
+
+#error {
+    width: 100vw;
+    height: 100vh;
+    background: #0a0a0a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+#error-code {
+    font-weight: 600;
+    font-size: 160px;
+}
+
+#error-message {
+    font-size: 20px;
+    font-style: italic;
+    color: #7c7c7c;
+}
+
+#error {
+    position: absolute;
+    bottom: 8px;
+    font-size: 16px;
+}
+
+#lessons-display {
+    display: flex;
+    align-items: flex-start;
+    padding: 16px;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#lessons-display h1 {
+    font-weight: 700;
+}
+
+#lessons-list {
+    padding-left: 16px;
+}
+
+#lessons-list > li {
+    margin-top: 4px;
+}
+
+#lesson-display {
+    padding: 16px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+    border-collapse: collapse;
+}
+
+.button-row-between {
+    width: 100%;
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-between;
+    align-items: center !important;
+    padding: 0 !important;
+}
+
+@media screen and (max-width: 720px) {
+    .button-row, .admin-buttons {
+        width: 100%;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: stretch !important;
+    }
+
+    table, form, input, .column {
+        width: 100%;
+    }
+
+    #lesson-game .container {
+        width: 100%;
+    }
+
+    #lesson-game h1 {
+        font-size: 48px;
+    }
+}

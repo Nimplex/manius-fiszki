@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    volumes:
+      - prisma_data:/app/prisma
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    command: ["npm", "start"]
+
+volumes:
+  prisma_data:
