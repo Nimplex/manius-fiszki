@@ -6,7 +6,7 @@ import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 import { apiRoutes } from "./routes/apiRoutes.js";
 
-const app = fastify({ logger: true });
+const app = fastify();
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 app.register(fastifyStatic, {
@@ -23,7 +23,7 @@ app.setNotFoundHandler((request, reply) => {
 
 // Send error if theres no response
 try {
-    await app.listen({ port: 3001 });
+    await app.listen({ port: 3001, host: "0.0.0.0" });
 } catch(err) {
     app.log.error(err);
     process.exit(1);
