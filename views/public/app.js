@@ -19,7 +19,7 @@ let lessonId;
 let lessonFiszki;
 let lessonsDisplay;
 let lessonsList;
-let lightModeButton;
+let lightModeButtons;
 let adminModeButton;
 let timeout;
 let rowIndex = 1;
@@ -155,7 +155,8 @@ async function saveCode() {
 function toggleTableLightMode() {
     tableLightMode = document.body.classList.toggle("light-mode") ? "yes" : "no";
     localStorage.setItem("table-light-mode", tableLightMode);
-    lightModeButton.innerText = tableLightMode == "yes" ? "🌕" : "☀️";
+    for (const button of lightModeButtons)
+        button.innerText = tableLightMode == "yes" ? "🌕" : "☀️";
 }
 
 function toggleAdminMode() {
@@ -274,9 +275,10 @@ window.onload = async function () {
 
     loadingContainer = document.getElementById("loading");
 
-    lightModeButton = document.getElementById("light-mode-button");
+    lightModeButtons = document.getElementsByClassName("light-mode-button");
     if (tableLightMode == "yes") {
-        lightModeButton.innerText = "🌕";
+        for (const button of lightModeButtons)
+            button.innerText = "🌕";
         document.body.classList.add("light-mode");
     }
 
